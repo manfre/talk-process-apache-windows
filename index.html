@@ -25,17 +25,17 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Faking a Process based Apache MPM on Windows</title>
+    <title>Django on Windows with Apache</title>
     <!-- Styles -->
     
-    <link rel="stylesheet" media="print" href="theme/css/print.css">
-    <link rel="stylesheet" media="screen, projection" href="theme/css/screen.css">
+    <link rel="stylesheet" media="print" href="theme\css\print.css">
+    <link rel="stylesheet" media="screen, projection" href="theme\css\screen.css">
     
     
     <!-- /Styles -->
     <!-- Javascripts -->
     
-    <script type="text/javascript" src="theme/js/slides.js"></script>
+    <script type="text/javascript" src="theme\js\slides.js"></script>
     
     
     <!-- /Javascripts -->
@@ -53,12 +53,45 @@
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Faking a Process based Apache MPM on Windows</h1></header>
+            <header><h1>Django on Windows with Apache</h1></header>
             
             
-            <section><h1>mpm_winnt</h1>
-<ul class="simple">
+            <section><p>Michael Manfre</p>
+<p>Semiconductor Research Corporation</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.rst">slides.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              1/6
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Windows MPM Options</h1></header>
+            
+            
+            <section><ul class="simple">
+<li>mpm_winnt<ul>
 <li>One process, many threads</li>
+</ul>
+</li>
 </ul></section>
             
           </div>
@@ -75,7 +108,7 @@
             </aside>
             
             <aside class="page_number">
-              1/4
+              2/6
             </aside>
           </footer>
         </div>
@@ -90,16 +123,21 @@
             
             
             <section><ul class="simple">
+<li>Uses more resources</li>
+<li>Most pages have lots of IO<ul>
+<li>Network (Request/Response)</li>
+<li>Cache</li>
+<li>Database</li>
+<li>Disk (Templates)</li>
+</ul>
+</li>
 <li>GIL says &quot;Good luck with that&quot;<ul>
 <li>&quot;Understanding the GIL&quot; - David Beazley <a class="reference external" href="http://www.dabeaz.com/GIL/">http://www.dabeaz.com/GIL/</a></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li>All sites are IO heavy<ul>
-<li>Network -&gt; Cache -&gt; Database -&gt; Disk -&gt; Network</li>
-</ul>
-</li>
+<li>Our site buckled under a small load</li>
 </ul></section>
             
           </div>
@@ -116,7 +154,7 @@
             </aside>
             
             <aside class="page_number">
-              2/4
+              3/6
             </aside>
           </footer>
         </div>
@@ -127,18 +165,16 @@
         <div class="slide">
           <div class="inner">
             
-            <header><h1>How To Fake It?</h1></header>
+            <header><h1>How We Worked Around It?</h1></header>
             
             
             <section><ul class="simple">
-<li>Web farm on a box (many Apaches)</li>
+<li>Web farm on a box</li>
 <li>Load balancer<ul>
 <li>mod_proxy_balancer (on the box)</li>
 <li>HAProxy</li>
-<li>...</li>
 </ul>
 </li>
-<li>Benefit: Forces you to plan for scaling</li>
 </ul></section>
             
           </div>
@@ -155,7 +191,40 @@
             </aside>
             
             <aside class="page_number">
-              3/4
+              4/6
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>It's Not All Bad</h1></header>
+            
+            
+            <section><ul class="simple">
+<li>More fault tolerant</li>
+<li>Ready to scale</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.rst">slides.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/6
             </aside>
           </footer>
         </div>
@@ -171,7 +240,7 @@
             
             <section><p>If you have ideas, please contact me.</p>
 <p>Michael Manfre</p>
-<p>manfre on Bitbucket | Github | Freenode</p></section>
+<p>manfre on Twitter | Bitbucket | Github | Freenode</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -187,7 +256,7 @@
             </aside>
             
             <aside class="page_number">
-              4/4
+              6/6
             </aside>
           </footer>
         </div>
@@ -202,26 +271,38 @@
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">Faking a Process based Apache MPM on Windows</a></th>
+        <th><a href="#slide1">Django on Windows with Apache</a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">What's Wrong With Threads?</a></th>
+        <th><a href="#slide2">Windows MPM Options</a></th>
         <td><a href="#slide2">2</a></td>
       </tr>
       
       
       <tr id="toc-row-3">
-        <th><a href="#slide3">How To Fake It?</a></th>
+        <th><a href="#slide3">What's Wrong With Threads?</a></th>
         <td><a href="#slide3">3</a></td>
       </tr>
       
       
       <tr id="toc-row-4">
-        <th><a href="#slide4">Is There A Better Way?</a></th>
+        <th><a href="#slide4">How We Worked Around It?</a></th>
         <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5">It's Not All Bad</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">Is There A Better Way?</a></th>
+        <td><a href="#slide6">6</a></td>
       </tr>
       
       
