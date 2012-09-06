@@ -1,15 +1,31 @@
-Faking a Process based Apache MPM on Windows
-============================================
+Django on Windows with Apache
+=============================
 
-mpm_winnt
----------
+Michael Manfre
 
-- One process, many threads
+Semiconductor Research Corporation
+
+----
+
+Windows MPM Options
+-------------------
+
+- mpm_winnt
+  
+  - One process, many threads
 
 ----
 
 What's Wrong With Threads?
 --------------------------
+
+- Uses more resources
+- Most pages have lots of IO
+
+  - Network (Request/Response)
+  - Cache
+  - Database
+  - Disk (Templates)
 
 - GIL says "Good luck with that"
 
@@ -17,23 +33,26 @@ What's Wrong With Threads?
 
 .. _`http://www.dabeaz.com/GIL/`: http://www.dabeaz.com/GIL/
 
-- All sites are IO heavy
-
-  - Network -> Cache -> Database -> Disk -> Network
+- Our site buckled under a small load
 
 ----
 
-How To Fake It?
----------------
+How We Worked Around It?
+------------------------
 
-- Web farm on a box (many Apaches)
+- Web farm on a box
 - Load balancer
 
   - mod_proxy_balancer (on the box)
   - HAProxy
-  - ...
 
-- Benefit: Forces you to plan for scaling
+----
+
+It's Not All Bad
+----------------
+
+- More fault tolerant
+- Ready to scale
 
 ----
 
@@ -44,4 +63,4 @@ If you have ideas, please contact me.
 
 Michael Manfre
 
-manfre on Bitbucket | Github | Freenode
+manfre on Twitter | Bitbucket | Github | Freenode
