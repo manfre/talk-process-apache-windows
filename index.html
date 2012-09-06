@@ -73,7 +73,53 @@
             </aside>
             
             <aside class="page_number">
-              1/6
+              1/7
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Why Windows?</h1></header>
+            
+            
+            <section><ul class="simple">
+<li>Windows shop<ul>
+<li>IT knowledge</li>
+</ul>
+</li>
+<li>Legacy Business Database on MS SQL<ul>
+<li>Triggers, user funcs, stored procs, SSIS, SSRS</li>
+<li>Replication not an option
+(tech limitations and historical business reasons)</li>
+</ul>
+</li>
+<li>Didn't have a choice</li>
+</ul>
+
+
+<h1>Why Not IIS, ASP.NET, PHP, etc?</h1>
+<p>Contact me after the talk</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.rst">slides.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/7
             </aside>
           </footer>
         </div>
@@ -108,7 +154,7 @@
             </aside>
             
             <aside class="page_number">
-              2/6
+              3/7
             </aside>
           </footer>
         </div>
@@ -131,14 +177,19 @@
 <li>Disk (Templates)</li>
 </ul>
 </li>
-<li>GIL says &quot;Good luck with that&quot;<ul>
-<li>&quot;Understanding the GIL&quot; - David Beazley <a class="reference external" href="http://www.dabeaz.com/GIL/">http://www.dabeaz.com/GIL/</a></li>
+<li>&quot;Understanding the GIL&quot; - David Beazley <a class="reference external" href="http://www.dabeaz.com/GIL/">http://www.dabeaz.com/GIL/</a><ul>
+<li>Threads release their lock when blocking for IO</li>
 </ul>
 </li>
 </ul>
-<ul class="simple">
-<li>Our site buckled under a small load</li>
-</ul></section>
+<blockquote>
+<dl class="docutils">
+<dt>Dear SRC,</dt>
+<dd>Congratulations on launching your new site. Sorry it buckled under non-peak load.</dd>
+<dt>Sincerely,</dt>
+<dd>Global Interpreter Lock</dd>
+</dl>
+</blockquote></section>
             
           </div>
           <div class="presenter_notes">
@@ -154,7 +205,7 @@
             </aside>
             
             <aside class="page_number">
-              3/6
+              4/7
             </aside>
           </footer>
         </div>
@@ -191,7 +242,7 @@
             </aside>
             
             <aside class="page_number">
-              4/6
+              5/7
             </aside>
           </footer>
         </div>
@@ -205,7 +256,9 @@
             <header><h1>It's Not All Bad</h1></header>
             
             
-            <section><ul class="simple">
+            <section><blockquote>
+&quot;What is life without challenges?&quot; - Richard Castle</blockquote>
+<ul class="simple">
 <li>More fault tolerant</li>
 <li>Ready to scale</li>
 </ul></section>
@@ -224,7 +277,7 @@
             </aside>
             
             <aside class="page_number">
-              5/6
+              6/7
             </aside>
           </footer>
         </div>
@@ -238,9 +291,10 @@
             <header><h1>Is There A Better Way?</h1></header>
             
             
-            <section><p>If you have ideas, please contact me.</p>
+            <section><p>If you have ideas, questions, or comments, please contact me.</p>
 <p>Michael Manfre</p>
-<p>manfre on Twitter | Bitbucket | Github | Freenode</p></section>
+<p>manfre on <a class="reference external" href="http://twitter.com/manfre">Twitter</a> | <a class="reference external" href="https://bitbucket.org/Manfre">Bitbucket</a> | <a class="reference external" href="https://github.com/manfre">Github</a> | Freenode</p>
+<p>Slides: <a class="reference external" href="http://bit.ly/dj12manfretalk">http://bit.ly/dj12manfretalk</a></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -256,7 +310,7 @@
             </aside>
             
             <aside class="page_number">
-              6/6
+              7/7
             </aside>
           </footer>
         </div>
@@ -277,32 +331,38 @@
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">Windows MPM Options</a></th>
+        <th><a href="#slide2">Why Windows?</a></th>
         <td><a href="#slide2">2</a></td>
       </tr>
       
       
       <tr id="toc-row-3">
-        <th><a href="#slide3">What's Wrong With Threads?</a></th>
+        <th><a href="#slide3">Windows MPM Options</a></th>
         <td><a href="#slide3">3</a></td>
       </tr>
       
       
       <tr id="toc-row-4">
-        <th><a href="#slide4">How We Worked Around It?</a></th>
+        <th><a href="#slide4">What's Wrong With Threads?</a></th>
         <td><a href="#slide4">4</a></td>
       </tr>
       
       
       <tr id="toc-row-5">
-        <th><a href="#slide5">It's Not All Bad</a></th>
+        <th><a href="#slide5">How We Worked Around It?</a></th>
         <td><a href="#slide5">5</a></td>
       </tr>
       
       
       <tr id="toc-row-6">
-        <th><a href="#slide6">Is There A Better Way?</a></th>
+        <th><a href="#slide6">It's Not All Bad</a></th>
         <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Is There A Better Way?</a></th>
+        <td><a href="#slide7">7</a></td>
       </tr>
       
       
