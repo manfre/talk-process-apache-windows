@@ -1,9 +1,17 @@
+.. |reg| unicode:: U+00AE .. REGISTERED TRADEMARK
+
 Django on Windows with Apache
 =============================
 
 Michael Manfre
 
 Semiconductor Research Corporation
+
+	Pioneers in research collaboration |reg|
+
+django-mssql 
+
+	Django database backend for Microsoft SQL Server
 
 ----
 
@@ -67,11 +75,15 @@ What's Wrong With Threads?
 How We Worked Around It?
 ------------------------
 
+- Optimize slow pages
 - Web farm on a box
 - Load balancer
 
   - mod_proxy_balancer (on the box)
   - HAProxy
+
+
+ "I got a fever, and the only cure is more Apaches"
 
 ----
 
@@ -83,7 +95,7 @@ It's Not All Bad
 
 - More fault tolerant
 - Ready to scale
-
+- Great learning experience
 
 ----
 
